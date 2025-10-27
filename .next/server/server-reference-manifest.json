@@ -1,0 +1,124 @@
+{
+  "node": {
+    "40856662032f3e7e213b31fd70bc20b6f47569e8fc": {
+      "workers": {
+        "app/(root)/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getNews",
+          "filename": "lib/actions/finnhub.actions.ts"
+        },
+        "app/(root)/stocks/[symbol]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/stocks/[symbol]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getNews",
+          "filename": "lib/actions/finnhub.actions.ts"
+        }
+      },
+      "layer": {
+        "app/(root)/page": "rsc",
+        "app/(root)/stocks/[symbol]/page": "rsc"
+      },
+      "filename": "lib/actions/finnhub.actions.ts",
+      "exportedName": "getNews"
+    },
+    "7f48d68b3b9532687ac94d2b531161287ac4ce26b4": {
+      "workers": {
+        "app/(root)/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "fetchJSON",
+          "filename": "lib/actions/finnhub.actions.ts"
+        },
+        "app/(root)/stocks/[symbol]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/stocks/[symbol]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "fetchJSON",
+          "filename": "lib/actions/finnhub.actions.ts"
+        }
+      },
+      "layer": {
+        "app/(root)/page": "rsc",
+        "app/(root)/stocks/[symbol]/page": "rsc"
+      },
+      "filename": "lib/actions/finnhub.actions.ts",
+      "exportedName": "fetchJSON"
+    },
+    "7fedb2b166eff4d0cf6daac0e42d47d7d16c48ff5e": {
+      "workers": {
+        "app/(root)/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "searchStocks",
+          "filename": "lib/actions/finnhub.actions.ts"
+        },
+        "app/(root)/stocks/[symbol]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/stocks/[symbol]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "searchStocks",
+          "filename": "lib/actions/finnhub.actions.ts"
+        }
+      },
+      "layer": {
+        "app/(root)/page": "action-browser",
+        "app/(root)/stocks/[symbol]/page": "action-browser"
+      },
+      "filename": "lib/actions/finnhub.actions.ts",
+      "exportedName": "searchStocks"
+    },
+    "7ffa578974bef73c6d644e8483fa69ebb6f7310606": {
+      "workers": {
+        "app/(root)/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth.actions.ts"
+        },
+        "app/(root)/stocks/[symbol]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(root)/stocks/[symbol]/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/finnhub.actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "signOut",
+          "filename": "lib/actions/auth.actions.ts"
+        }
+      },
+      "layer": {
+        "app/(root)/page": "action-browser",
+        "app/(root)/stocks/[symbol]/page": "action-browser"
+      },
+      "filename": "lib/actions/auth.actions.ts",
+      "exportedName": "signOut"
+    },
+    "7f178f0fa968fe041e563395d8fcc7f0dae3a29774": {
+      "workers": {
+        "app/(auth)/sign-in/page": {
+          "moduleId": "[project]/.next-internal/server/app/(auth)/sign-in/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "signInWithEmail",
+          "filename": "lib/actions/auth.actions.ts"
+        }
+      },
+      "layer": {
+        "app/(auth)/sign-in/page": "action-browser"
+      },
+      "filename": "lib/actions/auth.actions.ts",
+      "exportedName": "signInWithEmail"
+    },
+    "7fc11c9a7981229076e31f27cc419f8dd06de9424a": {
+      "workers": {
+        "app/(auth)/sign-up/page": {
+          "moduleId": "[project]/.next-internal/server/app/(auth)/sign-up/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/auth.actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "signUpWithEmail",
+          "filename": "lib/actions/auth.actions.ts"
+        }
+      },
+      "layer": {
+        "app/(auth)/sign-up/page": "action-browser"
+      },
+      "filename": "lib/actions/auth.actions.ts",
+      "exportedName": "signUpWithEmail"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "1I5jMmShk1KODXyba+Nntmpm/2gZTvQs0KUqJzD11Rk="
+}
