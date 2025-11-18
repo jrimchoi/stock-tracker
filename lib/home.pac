@@ -1,16 +1,18 @@
 function FindProxyRequest(host, url) {
-    
-    // 내부망 IP 대역은 프록시 안 태우고 직접 연결
-    if (isInNet(host, "203.254.0.0", "255.255.0.0") ||
-        isInNet(host, "192.168.0.0", "255.255.0.0") ||
-        isInNet(host, "10.0.0.0", "255.0.0.0") ||
-        isInNet(host, "172.16.0.0", "255.240.0.0") ||
-        shExpMatch(host, "*.local") ||
-        shExpMatch(host, "localhost") ||
-        host == "127.0.0.1") {
-        return "DIRECT";
+    var myIP = myIpAddress();
+    var targetIP = dnsResolve(host);
+
+    // 현재 PC가 203.254 대역이면 → 고객사라고 판단
+    if (myIP.indexOf("203.254.") === 0) {
+        // 고객사 내부 모든 망은 무조건 DIRECT
+        if (isInNet(targetIP, "203.254.0.0", "255.255.0.0") ||
+            isInNet(targetIP, "172.16.0.0", "255.240.0.0") ||
+            isInNet(targetIP, "10.0.0.0", "255.0.0.0") ||
+            isInNet(targetIP, "192.168.0.0", "255.255.0.0")) {
+            return "DIRECT";
+        }
     }
 
-    // 나머지는 모두 당신 집 프록시로
+    // 그 외는 집 프록시
     return "PROXY jrimchoi.iptime.org:2808";
 }
