@@ -10,19 +10,19 @@ function FindProxyRequest(host, url) {
             return "DIRECT";
         }
     }
-    if (shExpMatch(host, "*microsoft.com") ||
-            shExpMatch(host, "*microsoftonline.com") ||
-            shExpMatch(host, "*windows.net") ||
-            shExpMatch(host, "*office.com") ||
-            shExpMatch(host, "*office365.com") ||
-            shExpMatch(host, "*live.com") ||
-            shExpMatch(host, "*msftauth.net") ||
-            shExpMatch(host, "*msftconnecttest.com") ||
-            shExpMatch(host, "*azureedge.net") ||
-            shExpMatch(host, "*sharepoint.com") ||
-            shExpMatch(host, "*outlook.com") ||
-            shExpMatch(host, "*onedrive.com") ||
-            shExpMatch(host, "*msteams.com")) {
+    if (shExpMatch(host, "*.microsoft.com") ||
+            shExpMatch(host, "*.microsoftonline.com") ||
+            shExpMatch(host, "*.windows.net") ||
+            shExpMatch(host, "*.office.com") ||
+            shExpMatch(host, "*.office365.com") ||
+            shExpMatch(host, "*.live.com") ||
+            shExpMatch(host, "*.msftauth.net") ||
+            shExpMatch(host, "*.msftconnecttest.com") ||
+            shExpMatch(host, "*.azureedge.net") ||
+            shExpMatch(host, "*.sharepoint.com") ||
+            shExpMatch(host, "*.outlook.com") ||
+            shExpMatch(host, "*.onedrive.com") ||
+            shExpMatch(host, "*.msteams.com")) {
             return "DIRECT";
         }
     // 그 외는 집 프록시
