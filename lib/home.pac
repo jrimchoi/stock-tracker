@@ -26,5 +26,5 @@ function FindProxyRequest(host, url) {
             return "DIRECT";
         }
     // 그 외는 집 프록시
-    return "PROXY jrimchoi.iptime.org:2808";
+    return "PROXY jrimchoi.iptime.org:11000";
 }
