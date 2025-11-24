@@ -5,7 +5,7 @@ function FindProxyForURL(url, host) {
     // 1. 고객사(203.254.x.x) 내부에 있을 때
     if (myIP.indexOf("203.254.") === 0) {
         // 고객사 내부망(203.254.0.0/16, 172.16.0.0/12 등)은 무조건 DIRECT
-        if (isInNet(targetIP, "203.254.0.0", "255.255.0.0") ||
+        if (isInNet(targetIP, "203.245.0.0", "255.255.0.0") ||
             isInNet(targetIP, "172.16.0.0", "255.240.0.0") ||
             isInNet(targetIP, "10.0.0.0", "255.0.0.0") ||
             isInNet(targetIP, "192.168.0.0", "255.255.0.0")) {
@@ -14,11 +14,11 @@ function FindProxyForURL(url, host) {
     }
 
     // 2. 회사 내부에 있을 때 (203.235.x.x 등 당신 회사 대역 추가)
-    if (myIP.indexOf("203.235.") === 0 || 
+    if (myIP.indexOf("203.245.") === 0 || 
         myIP.indexOf("10.") === 0 || 
         myIP.indexOf("192.168.") === 0) {
         // 동일하게 사내 모든 망은 DIRECT
-        if (isInNet(targetIP, "203.235.0.0", "255.255.0.0") ||
+        if (isInNet(targetIP, "203.245.0.0", "255.255.0.0") ||
             isInNet(targetIP, "10.0.0.0", "255.0.0.0") ||
             isInNet(targetIP, "192.168.0.0", "255.255.0.0") ||
             isInNet(targetIP, "172.16.0.0", "255.240.0.0")) {
