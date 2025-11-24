@@ -25,22 +25,11 @@ function FindProxyForURL(url, host) {
             ip.indexOf("172.29.") === 0 ||
             ip.indexOf("172.30.") === 0 ||
             ip.indexOf("172.31.") === 0)) {
-            return "DIRECT";
-        }
-
-        // 2. MS/오피스 도메인도 무조건 DIRECT
-        if (shExpMatch(host, "*microsoft.com") ||
-            shExpMatch(host, "*office.com") ||
-            shExpMatch(host, "*sharepoint.com") ||
-            shExpMatch(host, "*outlook.com") ||
-            shExpMatch(host, "*onedrive.com") ||
-            shExpMatch(host, "*msteams.com") ||
-            shExpMatch(host, "*live.com")) {
-            return "DIRECT";
+            return "SOCKS5 127.0.0.1:11000";
         }
 
         // 3. 나머지는 모두 집 터널
-        return "SOCKS5 127.0.0.1:11000";
+        return "DIRECT";
     }
 
     // 고객사 아니면 그냥 DIRECT
