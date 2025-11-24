@@ -43,5 +43,6 @@ function FindProxyForURL(url, host) {
         return "SOCKS5 127.0.0.1:11000";
     }
 
+    // 고객사 아니면 그냥 DIRECT
     return "DIRECT";
 }
