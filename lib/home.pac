@@ -3,8 +3,8 @@ function FindProxyForURL(url, host) {
     var targetIP = dnsResolve(host);
 
     // 1. 고객사(203.254.x.x) 내부에 있을 때
-    if (myIP.indexOf("203.254.") === 0) {
-        // 고객사 내부망(203.254.0.0/16, 172.16.0.0/12 등)은 무조건 DIRECT
+    if (myIP.indexOf("203.245.") === 0) {
+        // 고객사 내부망(203.245.0.0/16, 172.16.0.0/12 등)은 무조건 DIRECT
         if (isInNet(targetIP, "203.245.0.0", "255.255.0.0") ||
             isInNet(targetIP, "172.16.0.0", "255.240.0.0") ||
             isInNet(targetIP, "10.0.0.0", "255.0.0.0") ||
