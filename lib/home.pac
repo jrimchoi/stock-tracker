@@ -1,36 +1,47 @@
 function FindProxyForURL(url, host) {
     var myIP = myIpAddress();
 
-    // ★ 고객사(GS Caltex) 내부에 있을 때만 작동
-    if (myIP.indexOf("203.245.73.") === 0) {
+    // 당신 PC가 GS Caltex 고객사 내부에 있을 때만 작동
+    if (myIP === "203.245.73.228") {
 
-        // 1. 고객사 내부 모든 망은 무조건 DIRECT
-        var resolved = dnsResolve(host);
-        if (resolved && 
-            (isInNet(resolved, "203.245.0.0", "255.255.0.0") ||   // 고객사 전체
-             isInNet(resolved, "10.0.0.0", "255.0.0.0") ||        // 사설망
-             isInNet(resolved, "172.16.0.0", "255.240.0.0") ||    // 사설망
-             isInNet(resolved, "192.168.0.0", "255.255.0.0"))) { // 사설망
+        var ip = dnsResolve(host);
+
+        // 1. 내부망은 무조건 DIRECT
+        if (ip && (
+            ip.indexOf("203.245.") === 0 ||     // GS Caltex 공인/사내 대역
+            ip.indexOf("172.16.") === 0 ||      // ← 여기 추가
+            ip.indexOf("172.17.") === 0 ||
+            ip.indexOf("172.18.") === 0 ||
+            ip.indexOf("172.19.") === 0 ||
+            ip.indexOf("172.20.") === 0 ||
+            ip.indexOf("172.21.") === 0 ||
+            ip.indexOf("172.22.") === 0 ||
+            ip.indexOf("172.23.") === 0 ||
+            ip.indexOf("172.24.") === 0 ||
+            ip.indexOf("172.25.") === 0 ||
+            ip.indexOf("172.26.") === 0 ||
+            ip.indexOf("172.27.") === 0 ||
+            ip.indexOf("172.28.") === 0 ||
+            ip.indexOf("172.29.") === 0 ||
+            ip.indexOf("172.30.") === 0 ||
+            ip.indexOf("172.31.") === 0)) {
             return "DIRECT";
         }
 
-        // 2. MS 관련 도메인도 무조건 DIRECT (업데이트/오피스 때문에 필수)
+        // 2. MS/오피스 도메인도 무조건 DIRECT
         if (shExpMatch(host, "*microsoft.com") ||
-            shExpMatch(host, "*windowsupdate.com") ||
             shExpMatch(host, "*office.com") ||
-            shExpMatch(host, "*office365.com") ||
-            shExpMatch(host, "*live.com") ||
             shExpMatch(host, "*sharepoint.com") ||
             shExpMatch(host, "*outlook.com") ||
             shExpMatch(host, "*onedrive.com") ||
-            shExpMatch(host, "*msteams.com")) {
+            shExpMatch(host, "*msteams.com") ||
+            shExpMatch(host, "*live.com")) {
             return "DIRECT";
         }
 
-        // 3. 그 외 모든 트래픽 → 집으로 터널
+        // 3. 나머지는 모두 집 터널
         return "SOCKS5 127.0.0.1:11000";
     }
 
-    // 고객사가 아니면 PAC 무시 (기본 인터넷 그대로)
     return "DIRECT";
 }
